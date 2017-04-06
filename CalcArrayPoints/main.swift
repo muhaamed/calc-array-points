@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Build a calculator
+//////////////  Build a calculator  //////////////////
 
 // ADD
 func add(num1:Int, num2:Int) ->Int{
@@ -39,7 +39,7 @@ func genericFunction(value1:Int, value2:Int,operatorFunc: (Int,Int) -> Int){
 
 
 
-// Array fun
+////////////////// Array fun /////////////////
 
 // newAdd
 func newAdd (numbers:[Int]) -> Int{
@@ -90,9 +90,9 @@ func arrayGenericFunction(ArrayOfInts:[Int],ArrayOperatorFunc: ([Int]) -> Int){
 
 
 
-// Points
+///////////////// Points ////////////////
 
-// addingPoints
+// addingTuples
 func addTuples (firstPoint:(Int,Int),secondPoint:(Int,Int)) ->(Int, Int){
     //print(y)
     let tupleX = firstPoint.0 + secondPoint.0
@@ -100,14 +100,7 @@ func addTuples (firstPoint:(Int,Int),secondPoint:(Int,Int)) ->(Int, Int){
     return (tupleX,tupleY)
 }
 
-//let tuple1 = (1,2)
-
-//let tuple2 = (3,4)
-//print(addTuples(firstPoint: tuple1, secondPoint: tuple2))
-
-
-
-// subtractingPoints
+// subtractingTuples
 func subtractTuples (firstPoint:(Int,Int),secondPoint:(Int,Int)) ->(Int, Int){
     //print(y)
     let tupleX = firstPoint.0 - secondPoint.0
@@ -117,14 +110,29 @@ func subtractTuples (firstPoint:(Int,Int),secondPoint:(Int,Int)) ->(Int, Int){
 
 
 
+// Dictionary
+
+// addingPoints
+func addPoints (firstPoint:(Int,Int),secondPoint:(Int,Int)) ->(x:Int, y:Int){
+    //print(y)
+    let tupleX = firstPoint.0 + secondPoint.0
+    let tupleY = firstPoint.1 + secondPoint.1
+    return (tupleX,tupleY)
+}
+
+// subtractingPoints
+func subtractPoint (firstPoint:(Int,Int),secondPoint:(Int,Int)) ->(x:Int, y:Int){
+    //print(y)
+    let tupleX = firstPoint.0 - secondPoint.0
+    let tupleY = firstPoint.1 - secondPoint.1
+    return (tupleX,tupleY)
+}
+
+
 let tuple1 = (1,2)
 
 let tuple2 = (3,4)
-print(subtractTuples(firstPoint: tuple1, secondPoint: tuple2))
-
-
-
-
+print(addPoints(firstPoint: tuple1, secondPoint: tuple2))
 
 
 
