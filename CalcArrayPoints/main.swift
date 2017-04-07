@@ -31,11 +31,11 @@ func divide(num1:Int, num2:Int) ->Int{
 }
 
 //Generic function
-func genericFunction(value1:Int, value2:Int,operatorFunc: (Int,Int) -> Int){
-    print(operatorFunc(value1,value2))
+func genericFunction(value1:Int, value2:Int,operatorFunc: (Int,Int) -> Int) ->Int{
+    return (operatorFunc(value1,value2))
 }
 
-//genericFunction(value1: 3, value2: 7, operatorFunc: add)
+print (genericFunction(value1: 3, value2: 7, operatorFunc: add))
 
 
 
@@ -84,7 +84,7 @@ func arrayGenericFunction(ArrayOfInts:[Int],ArrayOperatorFunc: ([Int]) -> Int){
     print(ArrayOperatorFunc(ArrayOfInts))
 }
 
-//arrayGenericFunction(ArrayOfInts: [2,2,1,3,2,2], ArrayOperatorFunc: count(numbers:))
+arrayGenericFunction(ArrayOfInts: [2,2,1,3,2,2], ArrayOperatorFunc: count(numbers:))
 
 
 
@@ -108,36 +108,43 @@ func subtractTuples (firstPoint:(Int,Int),secondPoint:(Int,Int)) ->(Int, Int){
     return (tupleX,tupleY)
 }
 
-
-
-// Dictionary
-
-// addingPoints
-func addPoints (firstPoint:(Int,Int),secondPoint:(Int,Int)) ->(x:Int, y:Int){
-    //print(y)
-    let tupleX = firstPoint.0 + secondPoint.0
-    let tupleY = firstPoint.1 + secondPoint.1
-    return (tupleX,tupleY)
-}
-
-// subtractingPoints
-func subtractPoint (firstPoint:(Int,Int),secondPoint:(Int,Int)) ->(x:Int, y:Int){
-    //print(y)
-    let tupleX = firstPoint.0 - secondPoint.0
-    let tupleY = firstPoint.1 - secondPoint.1
-    return (tupleX,tupleY)
-}
-
-
 let tuple1 = (1,2)
 
 let tuple2 = (3,4)
-print(addPoints(firstPoint: tuple1, secondPoint: tuple2))
+print(addTuples(firstPoint: tuple1, secondPoint: tuple2))
+
+// Dictionary
 
 
+func blah (dict1:Dictionary<String,Int>, dict2:Dictionary<String,Int>) -> Any{
+    
+    let firstX:Int? = dict1["x"]
+    let firstY:Int? = dict1["y"]!
+    let secondX:Int? = dict2["x"]!
+    let secondY:Int? = dict2["y"]!
+    
 
+    var finalX:Int?
+    var finalY:Int?
+    
+    
+    
+    if let firstX = dict1["x"] {
+         finalX = firstX+secondX!
+    }
+    if let firstY = dict1["y"] {
+         finalY = firstY+secondY!
+    }
+    
+    var x:String? = "x"
+    var y:String? = "y"
+    
+    let outputDictionary:[String:Int] = [x!:finalX!, y!:finalY!]
+    return outputDictionary
+    
+}
 
-
+print(blah(dict1: ["x":1,"y":1], dict2: ["x":1,"y":3]))
 
 
 
